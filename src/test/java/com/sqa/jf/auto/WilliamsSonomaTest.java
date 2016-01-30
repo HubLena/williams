@@ -1,6 +1,5 @@
 package com.sqa.jf.auto;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
@@ -14,7 +13,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class WilliamsSonomaTest
@@ -26,23 +24,15 @@ public class WilliamsSonomaTest
 
   private WebDriver driver;
 
-  private StringBuffer verificationErrors = new StringBuffer();
-
-  @DataProvider
-  public Object[][] keywordData()
-  {
-    return new Object[][] { new Object[] { "tea kettle", 1 }, new Object[] { "cookware", 1 },
-        new Object[] { "pan", 1 } };
-  }
-
   @BeforeClass(groups = "chrome")
   public void setUpChrome() throws Exception
   {
     System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
     this.driver = new ChromeDriver();
+    this.driver.manage().deleteAllCookies();
     this.baseUrl = "http://williams-sonoma.com";
-    // driver.manage().window()
-    this.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    this.driver.manage().window().maximize();
+    this.driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
   }
 
   //
@@ -67,27 +57,11 @@ public class WilliamsSonomaTest
   // this.baseUrl = "http://williams-sonoma.com";
   // this.driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
   // }
-  @AfterClass(alwaysRun = true, groups = "craigslist-search")
+  @AfterClass(alwaysRun = true)
   public void tearDown() throws Exception
   {
     this.driver.quit();
 
-  }
-
-  @Test(enabled = false, dataProvider = "keywordData", groups = "craigslist-search")
-  public void testCraigslist(String keywords) throws Exception
-  {
-    this.driver.get(this.baseUrl + "/");
-    this.driver.findElement(By.cssSelector("a.jjj > span.txt")).click();
-    this.driver.findElement(By.id("query")).clear();
-    this.driver.findElement(By.id("query")).sendKeys(keywords);
-    this.driver.findElement(By.xpath("//button[@type='submit']")).click();
-    List<WebElement> jobs = this.driver.findElements(By.cssSelector("p.row > a.i"));
-    System.out.println("Keywords:" + keywords);
-    for (WebElement job : jobs)
-    {
-      System.out.println(job.getAttribute("href"));
-    }
   }
 
   @Test(groups = "williams-sonoma")

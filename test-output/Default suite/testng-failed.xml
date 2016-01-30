@@ -6,4 +6,15 @@
       <class name="com.sqa.jf.auto.WilliamsSonomaTest"/>
     </classes>
   </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.sqa.jf.auto.WilliamsSonomaTest">
+        <methods>
+          <include name="setUpChrome"/>
+          <include name="testWilliamsSonoma"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.sqa.jf.auto.WilliamsSonomaTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
