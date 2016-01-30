@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="153821" started-at="2016-01-30T21:53:00Z" finished-at="2016-01-30T21:55:34Z">
+    <groups>
+      <group name="williams-sonoma">
+        <method signature="WilliamsSonomaTest.testWilliamsSonoma()[pri:0, instance:com.sqa.jf.auto.WilliamsSonomaTest@2ea6137]" name="testWilliamsSonoma" class="com.sqa.jf.auto.WilliamsSonomaTest"/>
+      </group> <!-- williams-sonoma -->
+    </groups>
+    <test name="Default test" duration-ms="153821" started-at="2016-01-30T21:53:00Z" finished-at="2016-01-30T21:55:34Z">
+      <class name="com.sqa.jf.auto.WilliamsSonomaTest">
+        <test-method status="PASS" signature="setUpChrome()[pri:0, instance:com.sqa.jf.auto.WilliamsSonomaTest@2ea6137]" name="setUpChrome" is-config="true" duration-ms="10506" started-at="2016-01-30T13:53:00Z" finished-at="2016-01-30T13:53:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpChrome -->
+        <test-method status="PASS" signature="testWilliamsSonoma()[pri:0, instance:com.sqa.jf.auto.WilliamsSonomaTest@2ea6137]" name="testWilliamsSonoma" duration-ms="139664" started-at="2016-01-30T13:53:10Z" finished-at="2016-01-30T13:55:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testWilliamsSonoma -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.sqa.jf.auto.WilliamsSonomaTest@2ea6137]" name="tearDown" is-config="true" duration-ms="3604" started-at="2016-01-30T13:55:30Z" finished-at="2016-01-30T13:55:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.sqa.jf.auto.WilliamsSonomaTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
